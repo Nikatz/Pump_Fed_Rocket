@@ -8,7 +8,8 @@ class Transducer {
         int _pin;
         u_int16_t _minVolt_Ducer= 0;
         u_int16_t _maxVolt_Ducer = 0.1;
-                
+        u_int16_t _minVolt;
+        u_int16_t _maxVolt;        
     public:
         Transducer(int pin);
         u_int16_t get_PSI();

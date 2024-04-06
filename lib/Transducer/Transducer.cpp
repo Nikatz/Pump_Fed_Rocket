@@ -7,10 +7,10 @@
  * @brief Constructor for the Transducer class
 */
 Transducer::Transducer(int pin) {
-    _pin = pin;
+   _pin = pin;
     pinMode(_pin, INPUT);
-    _minVolt = (_minCurrent * 100 / 3.3) * 1024;
-    _maxVolt = (_maxCurrent * 100 / 3.3) * 1024; 
+    _minVolt = (_minVolt_Ducer/ 3.3) * 1024;
+    _maxVolt = (_maxVolt_Ducer/ 3.3) * 1024; 
 }
 
 /**

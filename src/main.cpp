@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include "Transducer.h"
-#include <Transducer.cpp>
 
 /*
 Code By Nick Katz and
@@ -39,12 +38,17 @@ Writen to control a Electronic Speed Contoler and a Motor
 //TODO DAC Display
 //TODO Solenoid control
 
+Transducer ducer_1 (17);
 
 void setup() {
-
+  Serial.begin(115200);
   
 }
 
 void loop() {
+u_int16_t psi = ducer_1.get_PSI();
 
+Serial.print("PSIG: ");
+Serial.println(psi);
+delay(1000);
 }

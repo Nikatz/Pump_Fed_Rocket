@@ -2,18 +2,18 @@
 #define Transducer_h
 #include <Arduino.h>
 #include <stdlib.h>
+#include <Filters.h>
+#include <AH/Timing/MillisMicrosTimer.hpp>
 
 class Transducer {
     private:
         int _pin;
-        float _minVolt_Ducer= 4e-3;
-        float _maxVolt_Ducer = 20e-3;
-        float _minVolt = 0;
-        float _maxVolt = 0;
-        float _Resistor = 150;
+        float _Resistor = 149.85;
+        float _x;
+        float _y;
     public:
-        Transducer(int pin);
-        u_int16_t get_PSI();
+        Transducer(int pin, float slope, float offset);
+        float get_PSI();
 };
 #endif
 

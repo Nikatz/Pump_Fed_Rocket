@@ -4,7 +4,7 @@
 #include <ESP32Servo.h>
 
 /*
-Code By Nick Katz and
+Code By Nick Katz and help from Danny Gutierrez
 Writen to control a Electronic Speed Contoler and a Motor
 */
 /************************************************
@@ -35,12 +35,12 @@ Writen to control a Electronic Speed Contoler and a Motor
 */
 
 //TODO RPM Control 
-//TODO Pressure Data
+//TODO Pressure Data Accuracy 
 //TODO Tempurature Data
 //TODO DAC Display
 //TODO Solenoid control
 
-Transducer ducer_1 (17);
+Transducer ducer_1 (17,0.140546760109178,-250.707921137022);
 const int PULSE_SENDER = 10;
 
 //SETS THE MOTOR
@@ -59,8 +59,8 @@ const int time_calibrate = 4000;
 
 
 void setup() {
-  Serial.begin(115200);
-
+  Serial.begin(9600);
+  
 /*
   //setting up the ESC pins
   speedControler.attach(PULSE_SENDER);
@@ -91,9 +91,11 @@ void setup() {
 } 
 
 void loop() {
-u_int16_t psi = ducer_1.get_PSI();
+float psi = ducer_1.get_PSI();
 
-Serial.print("PSIG: ");
+Serial.print("PSI: ");
 Serial.println(psi);
+//Serial.print("PSIG: ");
+//Serial.println(psi);
 //delay(1000);
 }

@@ -7,7 +7,7 @@
 #include <driver/adc.h>
 
 double _x[8] = {1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15}; 
-double _y[8] = {-1499, -1555 ,-278.32, -278.32, -278.32, -278.32, -278.32, -278.32};
+double _y[8] = {-278, -278.32 ,-278.32, -278.32, -278.32, -278.32, -278.32, -278.32};
 
 void get_PSI();
 void ADC_setup();
@@ -21,14 +21,14 @@ double pressure6;
 double pressure7;
 double pressure8;
 
-int raw1;
-int raw2;
-int raw3;
-int raw4;
-int raw5;
-int raw6;
-int raw7;
-int raw8;
+int ducer1_value;
+int ducer2_value;
+int ducer3_value;
+int ducer4_value;
+int ducer5_value;
+int ducer6_value;
+int ducer7_value;
+int ducer8_value;
 
 #endif
 
